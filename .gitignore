@@ -44,4 +44,5 @@ bower.json
 build/
 dist/
 help/
+images/
 _bootstrap.scss
