@@ -1,0 +1,25 @@
+.footer-container {
+  background-color: $dark-grey;
+
+  p {
+    color: $light-grey;
+    margin: 15px auto;
+  }
+  a {
+    color: $dark-white;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+@media (min-width:$screen-sm-min) {
+  .footer-container {
+    background-color: transparent;
+    //background-color: rgba(22,22,22,.7);
+
+    p {
+      font-size: 14px;
+    }
+  }
+}

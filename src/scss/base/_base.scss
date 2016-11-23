@@ -1,0 +1,112 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: $dark-grey;
+  font-weight: 300;
+  background-color: $white;
+	//background-image: url("../img/cangeroes-bg.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+@media (min-width:$screen-sm-min) {
+	body {
+  	background-color: $dark-grey;
+		background-image: url("../img/cangeroes-bg.jpg");
+		//background-image: url("../img/background-nerdie.jpg");
+		//background-image: url("../img/background-old.jpg");
+		//background-repeat: repeat;
+		//background-position: center center;
+		//background-size: 250px 250px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	position: relative;
+	display: block;
+	font-weight: 400;
+	line-height: 1;
+	padding: 10px 0;
+	margin: 0px auto $title-xs-margin-bottom;
+}
+@media (min-width:$screen-sm-min) {
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+		margin: 0px auto $title-sm-margin-bottom;
+	}
+}
+h1, .h1, h2, .h2 {
+	&:before {
+		background: $orange none repeat scroll 0 0;
+		bottom: 0;
+		content: "";
+		height: 2px;
+		position: absolute;
+		width: $title-xs-underscore;
+	}
+}
+@media (min-width:$screen-sm-min) {
+	h1, .h1, h2, .h2 {
+		&:before {
+			width: $title-sm-underscore;
+		}
+	}
+}
+h1, .h1 {
+  font-size: 2.2em;
+}
+h2, .h2 {
+  font-size: 1.8em;
+}
+h3, .h3, h4, .h4 {
+  font-size: 1.6em;
+	margin-top: 30px;
+	margin-bottom: 0px;
+
+	&:first-child {
+		padding-top: 0;
+		margin-top: 0;
+	}
+}
+h5, .h5 {
+  font-size: 1.1em;
+	font-weight: 400;
+	margin: 0;
+}
+p {
+	font-size: 14px;
+}
+@media (min-width:$screen-md-min) {
+	p {
+		font-size: 15px;
+	}
+}
+@media (min-width:$screen-lg-min) {
+	p {
+		font-size: 16px;
+	}
+}
+a {
+  color: $orange;
+
+	&:focus, &.focus,
+	&:hover, &.hover {
+		color: $light-orange;
+		text-decoration: none;
+		outline: none;
+		@include transition-duration(.25s);
+	}
+}
+.orange {
+	color: $orange;
+}
+.grey {
+	color: $grey;
+}
+
+.visually-hidden {
+	display: none;
+}

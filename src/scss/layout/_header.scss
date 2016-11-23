@@ -1,0 +1,311 @@
+.header-container {
+  position: relative;
+  background-color: $black;
+  margin-bottom: 0px;
+
+  >.container {
+    border-color: transparent;
+  }
+
+  > .topbar {
+    position: relative;
+    height: 60px;
+    padding: 0 0 0 $grid-xs-gutter-width;
+  }
+  .navbar-toggle {
+    float: right;
+    width: 60px;
+    height: 60px;
+    color: $black;
+    background-color: $orange;
+    padding: 22px 10px;
+    margin: 0;
+    border-width: 0;
+    border-radius: 0;
+    z-index: 7000;
+
+    >.bars {
+      position: relative;
+      display: inline-block;
+      width: 22px;
+      height: 14px;
+      cursor: pointer;
+
+      > span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: $white;
+        @include opacity(1);
+        left: 0;
+        @include transition(all .2s ease);
+
+        &:nth-child(1) {
+          top: 6px;
+          @include rotate(135deg);
+        }
+        &:nth-child(2) {
+          top: 6px;
+          @include opacity(0);
+        }
+        &:nth-child(3) {
+          top: 6px;
+          @include rotate(-135deg);
+        }
+      }
+    }
+    &.collapsed > .bars {
+      span:nth-child(1) {
+        top: 0px;
+        @include rotate(0deg);
+      }
+      span:nth-child(2) {
+        left: 0;
+        @include opacity(1);
+      }
+      span:nth-child(3) {
+        top: 12px;
+        @include rotate(0deg);
+      }
+    }
+    &:hover {
+      >.bars > span {
+        background-color: $black;
+      }
+    }
+    &:focus, &:active {
+      >.bars > span {
+        background-color: $black;
+      }
+    }
+  }
+  > .container {
+    position: relative;
+
+    .region-search {
+      display: none;
+    }
+    .region-social-media {
+      position: relative;
+      display: block;
+      float: right;
+      top: auto;
+      right: auto;
+      padding: 15px 10px;
+      z-index: 9000;
+
+      a {
+        float: left;
+        color: $white;
+        height: 30px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .site-branding {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    overflow: visible;
+    z-index: 5000;
+    .site-name {
+      > a {
+        display: block;
+        width: 94px;
+        height: 80px;
+        font-size: 0px;
+        background-image: url("../img/cangeroes-logo-small.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 94px 80px;
+
+      }
+    }
+  }
+  @media (min-width: $screen-sm-min) {
+    background-color: rgba(0,0,0,.84);
+    margin-bottom: 45px;
+
+    > .topbar {
+      display: block;
+      height: 90px;
+      background-image: url("../img/cangeroes-skyline.png");
+      background-position: 7px top;
+      background-repeat: no-repeat;
+      background-size: 960px 90px;
+    }
+    > .container {
+      position: relative;
+
+      .region-primary-menu {
+        display: block;
+        float: left;
+        width: 100%;
+        @include clearfix();
+      }
+      .region-search {
+        display: inline-block;
+        float: right;
+
+        .search-btn {
+          display: block;
+          width: 44px;
+          height: 44px;
+          color: $white;
+          text-align: center;
+          padding: 11px 0;
+          @include transition(all .1s ease);
+
+          .fa {
+            font-size: 22px;
+            line-height: 22px;
+          }
+          &:hover {
+            color: $orange;
+          }
+        }
+
+        .col-sm-offset-3 {
+          display: none;
+          float: right;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          margin: 0;
+
+          > .btn {
+            width: 40px;
+            height: 40px;
+            font-size: 0;
+            content: "Z";
+          }
+        }
+      }
+      .region-social-media {
+        position: absolute;
+        display: block;
+        top: 15px;
+        right: 10px;
+        padding: 0;
+
+        a {
+          float: left;
+          color: $white;
+          height: 30px;
+          margin-left: 5px;
+          margin-right: 0;
+
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+
+    .site-branding {
+      position: absolute;
+      top: 38px;
+      left: $grid-sm-gutter-width;
+      overflow: visible;
+      z-index: 5000;
+
+      .site-name {
+        > a {
+          display: block;
+          width: 149px;
+          height: 126px;
+          font-size: 0px;
+          background-image: url("../img/cangeroes-logo.png");
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 149px 126px;
+        }
+      }
+    }
+  }
+  @media (min-width: 860px) {
+    > .container {
+      &.primary-menu {
+        .region-primary-menu {
+          width: 720px;
+        }
+      }
+      .region-social-media {
+        top: 90px;
+        right: $grid-sm-gutter-width;
+        padding: 7px 0;
+      }
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    margin-bottom: 56px;
+
+    > .topbar {
+      height: 90px;
+      background-position: 10px top;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+    > .container {
+      &.primary-menu {
+        .region-primary-menu {
+          width: 800px;
+        }
+      }
+      .region-social-media {
+        top: 90px;
+        right: 0;
+      }
+    }
+    .site-branding {
+      top: 30px;
+      left: 0;
+
+      .site-name {
+        > a {
+          display: block;
+          width: 164px;
+          height: 139px;
+          font-size: 0px;
+          background-image: url("../img/cangeroes-logo-medium.png");
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 164px 139px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    > .topbar {
+      height: 110px;
+      background-position: left top;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+    > .container {
+      &.primary-menu {
+        .region-primary-menu {
+          width: 900px;
+        }
+      }
+      .region-social-media {
+        top: 110px;
+      }
+    }
+    .site-branding {
+      top: 39px;
+      left: 0;
+
+      .site-name {
+        > a {
+          width: 180px;
+          height: 153px;
+          background-image: url("../img/cangeroes-logo-large.png");
+          background-size: 180px 153px;
+        }
+      }
+    }
+  }
+}

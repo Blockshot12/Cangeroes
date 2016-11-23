@@ -1,0 +1,209 @@
+.form-wrapper {
+  //padding: 0 $grid-xs-gutter-width;
+}
+.contact-form {
+  padding: 0; // $grid-xs-gutter-width;
+  background-color: $white;
+}
+@media (min-width: $screen-sm-min) {
+  .contact-form {
+    padding: 0 $grid-sm-gutter-width;
+  }
+}
+.form-horizontal {
+  background-color: $white;
+  padding: 0 $grid-xs-gutter-width 20px;
+  margin-left: -$grid-xs-gutter-width;
+  margin-right: -$grid-xs-gutter-width;
+
+  legend {
+    padding: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid $light-grey;
+  }
+  h2, .h2,
+  .fieldset-legend {
+    color: $text-color;
+    font-size: 1.06em;
+    font-weight: 400;
+    margin: 15px auto;
+  }
+
+  p {
+    display: block;
+    width: 100%;
+    padding: 0 0 $grid-xs-gutter-width*2 $grid-xs-gutter-width;
+    margin-left: 0;
+  }
+}
+@media (min-width:$screen-sm-min) {
+  .form-horizontal {
+    padding: 0 $grid-sm-gutter-width 20px;
+    margin: 0;
+
+    legend {
+      margin-bottom: $grid-sm-gutter-width;
+    }
+
+    p {
+      display: block;
+      width: 66.66666667%;
+      padding: 0 $grid-sm-gutter-width $grid-sm-gutter-width*2 ;
+      margin-left: 33.33333333%;
+    }
+  }
+}
+.form-horizontal .form-group,
+.form-actions {
+  margin: 0 0 5px;
+
+  .col-sm-2, .col-sm-3, .col-sm-4 {
+    padding: 7px 0 3px;
+  }
+  .col-sm-8, .col-sm-9, .col-sm-10 {
+    padding: 0;
+  }
+
+  @media (min-width:$screen-sm-min) {
+    margin: 0 0 15px;
+
+    .col-sm-2, .col-sm-3, .col-sm-4 {
+      padding: 7px $grid-sm-gutter-width 7px 0;
+    }
+    .col-sm-8, .col-sm-9, .col-sm-10 {
+      padding: 0 0 0 $grid-sm-gutter-width;
+    }
+  }
+  .control-label.form-required:after {
+    color: $orange;
+    margin-left: 5px;
+    content: "*";
+
+  }
+  .form-control {
+    border-radius: 1px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset;
+    outline: none;
+    //-webkit-appearance: none;
+    //-moz-appearance: none;
+    //appearance: none;
+
+    &::-ms-expand {
+      //display: none;
+    }
+    &:focus,
+    &:active {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+      border-color: $black;
+      outline: none;
+    }
+    option {
+      color: $grey;
+      background-color: $dark-white;
+      margin: 0;
+      border: 0px solid;
+      outline: none;
+
+      &:not(:checked) {
+        background: transparent;
+      }
+      &:checked {
+        color: #009;
+      }
+    }
+  }
+
+  .description {
+    padding: 2px 4px 2px 17px;
+  }
+}
+.form-actions {
+  min-height: 32px;
+}
+#edit-preview {
+  display: none;
+}
+
+.form-messages {
+  background-color: $white;
+  padding: 0 $grid-xs-gutter-width $grid-xs-gutter-width;
+
+  > .form-messages-content {
+    color: $white;
+    font-size: 1.2em;
+    padding: $grid-xs-gutter-width;
+
+    a {
+      color: $light-grey;
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    > .form-messages-content-icon,
+    > .form-messages-content-text {
+      display: block;
+    }
+    > .form-messages-content-icon {
+      position: absolute;
+      padding-right: $grid-xs-gutter-width;
+    }
+    > .form-messages-content-text {
+      width: auto;
+      padding-left: 40px;
+    }
+
+    > .form-messages-content {
+      background-color: $grey;
+
+      .fa {
+        color: $dark-grey;
+        font-size: 1.4em;
+
+        &:before {
+          content: "\f054";
+        }
+      }
+    }
+  }
+  &.form-messages--status > .form-messages-content {
+    color: $black;
+    background-color: $light-grey;
+    border-left: 4px solid $black;
+
+    a {
+      color: $black;
+    }
+
+    .fa:before {
+      content: "\f00c";
+      color: #090;
+    }
+  }
+
+  &.form-messages--error > .form-messages-content {
+    background-color: #c00;
+
+    .fa:before {
+      content: "\f00d";
+    }
+  }
+}
+@media (min-width:$screen-sm-min) {
+  .form-messages {
+    background-color: $white;
+    padding: 0 $grid-sm-gutter-width $grid-sm-gutter-width;
+
+    > .form-messages-content {
+      color: $white;
+      font-size: 1.4em;
+      padding: $grid-sm-gutter-width;
+
+      .fa {
+        font-size: 1.4em;
+      }
+    }
+  }
+}

@@ -1,0 +1,322 @@
+table {
+  background-color: $white;
+}
+th {
+  text-align: left;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 24px;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 4px 12px;
+        line-height: 24px;
+        vertical-align: top;
+        &:first-child {
+          width: 24%;
+        }
+        &:nth-child(2) {
+          width: 38%;
+        }
+        &:nth-child(3) {
+          width: 38%;
+        }
+      }
+    }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+    color: $white;
+    font-weight: 400;
+    text-transform: lowercase;
+    background-color: $black;
+    vertical-align: bottom;
+    border-width: 0;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 1px solid $light-grey;
+  }
+
+  // Nesting
+  .table {
+    background-color: $white;
+  }
+}
+
+.table-bordered {
+  border-width: 0px;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        line-height: 28px;
+        padding: 6px 8px;
+        border-width: 0;
+        border-bottom: 1px solid $light-grey;
+
+        &:first-child {
+          text-transform: lowercase;
+        }
+        a {
+          color: $black;
+        }
+        > strong {
+          //color: $orange;
+        }
+      }
+    }
+  }
+}
+
+
+.table-striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: transparent;
+  }
+  > tbody > tr:nth-of-type(even) {
+    background-color: transparent;
+  }
+}
+
+table col[class*="col-"] {
+  position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+  float: none;
+  display: table-column;
+}
+table {
+  td,
+  th {
+    &[class*="col-"] {
+      position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+      float: none;
+      display: table-cell;
+    }
+  }
+}
+
+.gameschedule-table {
+  display: block;
+  width: 100%;
+  min-width: 340px;
+  @include clearfix();
+
+  p.month,
+  p.week {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    text-transform: lowercase;
+  }
+  p.month {
+    color: $orange;
+    font-size: 1.4em;
+    margin: 0;
+  }
+  p.week {
+    color: $black;
+    font-size: 1.2em;
+  }
+  .table {
+    width: 100%;
+
+    >.table-header {
+      display: none;
+    }
+    >.table-row {
+      display: block;
+      width: 100%;
+      @include clearfix();
+      >.table-cell {
+        float: left;
+        line-height: 22px;
+        padding: 4px;
+      }
+    }
+    &.table-week {
+      >.table-row {
+        position: relative;
+        height: 92px;
+        margin-bottom: 15px;
+
+        >.table-cell {
+          position: absolute;
+          &.datetime {
+            left: 0;
+            top: 0;
+            color: $white;
+            font-size: .9em;
+            font-weight: 400;
+            background-color: $grey;
+            z-index: 1;
+          }
+          &.home {
+            width: 100%;
+            left: 0;
+            top: 30px;
+            border-bottom: 1px solid $light-grey;
+          }
+          &.away {
+            width: 100%;
+            left: 0;
+            top: 60px;
+          }
+          &.score {
+            width: 86px;
+            height: 60px;
+            top: 30px;
+            right: 0;
+            font-size: 1.2em;
+            text-align: center;
+            line-height: 54px;
+            background-color: $white;
+            border-left: 1px solid $light-grey;
+          }
+          &.location {
+            right: 0;
+            top: 0;
+            width: 100%;
+            color: $white;
+            font-size: .9em;
+            font-weight: 400;
+            text-align: right;
+            background-color: $grey;
+          }
+        }
+      }
+      >.table-row {
+        border: 1px solid $light-grey;
+      }
+    }
+  }
+}
+
+@media (min-width: 851px) {
+  .gameschedule-table {
+    display: block;
+    width: 100%;
+    @include clearfix();
+
+    p.month {
+      font-size: 1.8em;
+    }
+    p.week {
+      font-size: 1.4em;
+    }
+    .table-week {
+      .table-week-header,
+      .table-week-row {
+        display: block;
+        width: 100%;
+        @include clearfix();
+
+        >.table-week-cell {
+          float: left;
+          line-height: 28px;
+          padding: 6px 8px;
+        }
+      }
+      .table-week-header {
+        color: $white;
+        background-color: $black;
+      }
+    }
+    .table {
+      >.table-header,
+      >.table-row {
+        display: block;
+        width: 100%;
+        @include clearfix();
+        >.table-cell {
+          float: left;
+          line-height: 28px;
+          padding: 6px 8px;
+        }
+      }
+      &.table-week {
+        >.table-row {
+          height: auto;
+          margin: 0;
+          border: none;
+
+          >.table-cell {
+            position: relative;
+
+            &.datetime,
+            &.home,
+            &.away,
+            &.score,
+            &.location {
+              float: left;
+              height: auto;
+              top: auto;
+              left: auto;
+              right: auto;
+              color: $black;
+              font-size: 1em;
+              font-weight: 300;
+              text-align: left;
+              line-height: 28px;
+              background-color: transparent;
+              border: none;
+            }
+          }
+        }
+        >.table-header,
+        >.table-row {
+          >.table-cell {
+            &.datetime {
+              width: 15%;
+              overflow: hidden;
+            }
+            &.home {
+              width: 22%;
+              overflow: hidden;
+            }
+            &.away {
+              width: 22%;
+              overflow: hidden;
+            }
+            &.score {
+              width: 9%;
+              overflow: hidden;
+            }
+            &.location {
+              width: 32%;
+              overflow: hidden;
+            }
+          }
+        }
+        >.table-header {
+          color: $white;
+          font-weight: 400;
+          text-transform: lowercase;
+          background-color: $black;
+        }
+        >.table-row {
+          border-bottom: 1px solid $light-grey;
+        }
+      }
+    }
+  }
+}

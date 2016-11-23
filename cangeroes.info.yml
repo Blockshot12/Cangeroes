@@ -1,0 +1,28 @@
+name: Cangeroes
+type: theme
+description: Cangeroes is a flexible Drupal 8 theme, with regions and a mobile-first layout.
+package: Cangeroes
+core: 8.x
+
+libraries:
+  - cangeroes/font-google-css
+  - cangeroes/font-awesome-css
+  - cangeroes/global-css
+  - cangeroes/global-js
+stylesheets-remove:
+  - core/themes/stable/css/system/components/align.module.css
+  - core/themes/stable/css/views/views.module.css
+
+regions:
+  sitename: 'Sitename'
+  primary_menu: 'Primary menu'
+  search: 'Search'
+  help: 'Help'
+  title_bar: 'Title Bar'
+  content: 'Main Content'
+  sidebar_first: 'Sidebar Left'
+  sidebar_second: 'Sidebar Richt'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_copy: 'Copyright'

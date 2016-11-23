@@ -1,0 +1,91 @@
+body.maintenance-page {
+	color: $white;
+	background-color: $black;
+
+	.header-container {
+		background-color: transparent;
+		padding: 30px 15px;
+		margin: 0 auto;
+
+		.logo {
+			position: relative;
+			width: 240px;
+			height: 204px;
+			margin: 0 auto;
+		}
+	}
+
+	.main-container {
+		padding: 0 15px;
+
+		.maintenance-content {
+			padding: 15px 0;
+			border-top: 2px solid $white;
+
+			p {
+				font-size: 14px;
+				&.maintenance-message {
+					font-size: 20px;
+					font-weight: 300;
+					letter-spacing: .2px;
+					padding-bottom: 15px;
+					border-bottom: 2px solid $white;
+				}
+
+				a {
+					font-size: 14px;
+				}
+			}
+		}
+
+		.maintenance-social-media {
+
+			a {
+				margin-right: 6px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+				> .fa {
+					font-size: 2.4em;
+				}
+			}
+		}
+	}
+	.footer-container {
+		background-color: transparent;
+	}
+}
+@media (min-width:$screen-sm-min) {
+	body.maintenance-page {
+		background-image: url("../img/maintenance-bg.jpg");
+		background-position: center top;
+
+		.header-container {
+			background-color: transparent;
+			padding: 30px 0;
+		}
+
+		.main-container {
+			padding: 0;
+
+			.maintenance-content {
+				padding: 15px 0;
+				border-top: 2px solid $white;
+
+				p {
+					font-size: 18px;
+
+					&.maintenance-message {
+						font-size: 24px;
+						letter-spacing: .4px;
+					}
+				}
+			}
+		}
+
+		.footer-container {
+			padding: 0 15px;
+		}
+	}
+}

@@ -1,0 +1,473 @@
+.main-container > .container {
+  background-color: $white;
+
+  .mainbar {
+    padding: $grid-xs-gutter-width $grid-xs-gutter-width $grid-xs-gutter-width*2 0;
+
+    h1.page-title {
+      &:before {
+        background: $orange none repeat scroll 0 0;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        position: absolute;
+        width: 40px;
+      }
+    }
+    h1.page-title {
+      padding-top: 0;
+    }
+
+    .block {
+
+      .block-content {
+
+        h2, .h2,
+        h3, .h3,
+        h4, .h4 {
+          //padding: 10px 0 12px;
+          margin: 0;
+          font-weight: 400;
+        }
+        h2, .h2 {
+          display: block;
+          font-size: 1.5em;
+          margin: 0 0 $grid-xs-gutter-width;
+        }
+/*
+        .node {
+          &.node--type-team {
+            .field__item {
+              //background-color: $white;
+              //padding: 15px;
+            }
+            .field--type-image {
+              //background-color: $white;
+              //padding: 0;
+            }
+          }
+          .field__label {
+            position: relative;
+            display: block;
+            color: $dark-grey;
+            font-size: 1.7em;
+            font-weight: 400;
+            line-height: 1;
+            padding: 15px 0 12px;
+            margin-bottom: 15px;
+
+            &:before {
+              position: absolute;
+              bottom: 0;
+              height: 2px;
+              width: 50px;
+              background: $orange none repeat scroll 0 0;
+              content: "";
+            }
+          }
+          .field--label-hidden {
+            //padding-top: 15px;
+          }
+          .field--name-field-formulier-titel {
+            color: $orange;
+            font-size: 1.6em;
+          }
+          .text-formatted {
+            img {
+              display: block;
+              height: auto;
+              max-width: 100%;
+            }
+          }
+        }*/
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      padding: $grid-sm-gutter-width*2 $grid-sm-gutter-width $grid-sm-gutter-width*2 0;
+
+      h1.page-title, h2, .h2 {
+        &:before {
+          width: 50px;
+        }
+      }
+
+      .block {
+
+        .block-content {
+
+          h2, .h2,
+          h3, .h3,
+          h4, .h4 {
+            //padding: 10px 0 13px;
+          }
+          h2, .h2 {
+            font-size: 1.6em;
+            margin: 0 0 $grid-sm-gutter-width;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      .block {
+
+        .block-content {
+          h2, .h2 {
+            font-size: 1.8em;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar-right {
+    //background-color: $dark-white;
+    padding: $grid-xs-gutter-width 0;
+
+    .block {
+      background-color: $white;
+      padding: $grid-xs-gutter-width;
+      margin-bottom: $grid-xs-gutter-width*3;
+      @include clearfix();
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      h2, .h2 {
+        font-size: 1.3em;
+        padding: 0 0 $grid-xs-gutter-width;
+
+        &:before {
+          background: $orange none repeat scroll 0 0;
+          bottom: 0;
+          content: "";
+          height: 2px;
+          position: absolute;
+          width: 40px;
+        }
+      }
+
+      &.lid-worden {
+        .block-content {
+          background-image: url(../img/cangeroes-icon.png);
+          background-position: center 15px;
+          background-repeat: no-repeat;
+          background-size: 125px 60px;
+          padding-top: 90px;
+
+          .field {
+            width: 100%;
+            font-size: 1.4em;
+            text-align: center;
+            line-height: 1.4em;
+            padding: 0;
+
+            &.field--name-field-button {
+              text-align: center;;
+            }
+          }
+          .btn {
+            margin: $grid-xs-gutter-width auto 0;
+          }
+        }
+      }
+
+      &.agenda {
+        display: block;
+        @include clearfix();
+        .agenda-item {
+          margin-bottom: $grid-xs-gutter-width;
+
+          .calendar-icon {
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 42px;
+            background-color: $grey;
+            padding: 5px 0;
+
+            .item-date,
+            .item-month {
+              display: block;
+              @include clearfix();
+              color: $white;
+              font-weight: 300;
+              text-align: center;
+              text-transform: uppercase;
+              line-height: 0.9em;
+              padding: 0;
+              margin: 0;
+            }
+            .item-date {
+              font-size: 1.5em;
+            }
+            .item-month {
+              font-size: .9em;
+            }
+
+          }
+          .calendar-date {
+            position: relative;
+            display: block;
+            width: 100%;
+            min-height: 42px;
+            padding: 0 0 0 48px;
+
+            > p {
+              margin-bottom: 0;
+
+              &.item-title {
+                color: $black;
+                font-size: 1.2em;
+                font-weight: 400;
+                letter-spacing: .05px;
+
+                .open {
+                  display: none;
+                }
+              }
+              &.item-time{
+                color: $grey;
+
+                &:before {
+                  display: inline-block;
+                  font: normal normal normal 14px/1 FontAwesome;
+                  font-size: 1em;
+                  font-weight: 300;
+                  text-rendering: auto;
+                  -webkit-font-smoothing: antialiased;
+                  -moz-osx-font-smoothing: grayscale;
+                  transform: translate(0, 0);
+                  content: "\f017";
+                }
+              }
+            }
+          }
+
+          .item-link {
+            .calendar-icon {
+              .item-date,
+              .item-month {
+                color: $white;
+              }
+            }
+            .calendar-date {
+              > p {
+                &.item-title {
+                  color: $dark-grey;
+
+                  .open {
+                    display: inline;
+                    color: $orange;
+                    &.fa {
+                      font-size: 1.1em;
+                    }
+                  }
+                }
+                &.item-time {
+                  color: $grey;
+                }
+              }
+            }
+            &:hover {
+              .calendar-icon {
+                background-color: $orange;
+              }
+              .calendar-date {
+                > p {
+                  &.item-title {
+                    color: $orange;
+                  }
+                  &.item-time {
+                    color: $orange;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.coaches {
+        margin-top: $grid-xs-gutter-width;
+      }
+
+      .sponsor {
+        display: block;
+        float: left;
+        width: 50%;
+        margin-bottom: $grid-xs-gutter-width;
+
+        &:nth-child(odd) {
+          padding-right: $grid-xs-gutter-width/2;
+        }
+        &:nth-child(even) {
+          padding-left: $grid-xs-gutter-width/2;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @media (min-width: $screen-sm-min) {
+      padding: $grid-sm-gutter-width*2 $grid-sm-gutter-width;
+
+      .block {
+        padding: $grid-sm-gutter-width;
+        margin-bottom: $grid-sm-gutter-width;
+
+        h2, .h2 {
+          font-size: 1.7em;
+          padding-bottom: $grid-sm-gutter-width;
+
+          &:before {
+            width: 50px;
+          }
+        }
+
+        &.lid-worden {
+          background-color: $dark-white;
+
+          .block-content {
+            background-image: url("../img/cangeroes-icon.png");
+            background-position: center 15px;
+            background-repeat: no-repeat;
+            background-size: 125px 60px;
+            padding-top: 90px;
+
+            .field {
+              width: 100%;
+              font-size: 1.4em;
+              text-align: center;
+              line-height: 1.4em;
+              padding: 0;
+
+              &.field--name-field-button {
+                text-align: center;;
+              }
+            }
+            .btn {
+              margin: $grid-xs-gutter-width auto 0;
+            }
+          }
+        }
+
+        &.agenda {
+          .agenda-item {
+            padding-bottom: $grid-sm-gutter-width;
+
+            .calendar-icon {
+              width: 50px;
+              height: 52px;
+
+              .item-date {
+                font-size: 1.84em;
+                padding-bottom: 3px;
+              }
+              .item-month {
+                font-size: 1.1em;
+              }
+
+            }
+            .calendar-date {
+              position: relative;
+              display: block;
+              width: 100%;
+              min-height: 52px;
+              padding: 0 0 0 58px;
+
+              > p {
+                margin-bottom: 0;
+
+                &.item-title {
+                  color: $black;
+                  font-size: 1.2em;
+                  font-weight: 400;
+                  letter-spacing: .05px;
+
+                  .open {
+                    display: none;
+                  }
+                }
+                &.item-time{
+                  color: $grey;
+
+                  &:before {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: 1em;
+                    font-weight: 300;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    transform: translate(0, 0);
+                    content: "\f017";
+                  }
+                }
+              }
+            }
+
+            .item-link {
+              .calendar-icon {
+                .item-date,
+                .item-month {
+                  color: $white;
+                }
+              }
+              .calendar-date {
+                > p {
+                  &.item-title {
+                    color: $dark-grey;
+
+                    .open {
+                      display: inline;
+                      color: $orange;
+                      &.fa {
+                        font-size: 1.1em;
+                      }
+                    }
+                  }
+                  &.item-time {
+                    color: $grey;
+                  }
+                }
+              }
+              &:hover {
+                .calendar-icon {
+                  background-color: $orange;
+                }
+                .calendar-date {
+                  > p {
+                    &.item-title {
+                      color: $orange;
+                    }
+                    &.item-time {
+                      color: $orange;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.coaches {
+          margin-top: $grid-sm-gutter-width;
+        }
+
+        .sponsor {
+          float: none;
+          width: 100%;
+          margin-bottom: $grid-sm-gutter-width;
+        }
+      }
+    }
+  }
+}
+.path-frontpage {
+  .page-title {
+    display: none;
+  }
+}

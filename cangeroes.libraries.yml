@@ -1,0 +1,43 @@
+font-google-css:
+  remote: https://fonts.google.com/
+  version: 1.0.0
+  license:
+    name: SIL Open Font Licence
+    url: http://scripts.sil.org/OFL
+    gpl-compatible: true
+  css:
+    theme:
+      https://fonts.googleapis.com/css?family=Roboto:300,400: {type: external, minified: true }
+
+font-awesome-css:
+  remote: https://fortawesome.github.io/Font-Awesome/
+  version: 4.6.3
+  license:
+    name: MIT
+    url: https://fortawesome.github.io/Font-Awesome/license/
+    gpl-compatible: true
+  css:
+    theme:
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css: { type: external, minified: true }
+
+font-awesome-offline-css:
+  remote: https://fortawesome.github.io/Font-Awesome/
+  version: 4.6.3
+  license:
+    name: MIT
+    url: https://fortawesome.github.io/Font-Awesome/license/
+    gpl-compatible: true
+  css:
+    theme:
+      dist/css/font-awesome.css: { }
+
+global-css:
+  css:
+    theme:
+      dist/css/style.min.css: { minified: true}
+
+global-js:
+  js:
+    dist/js/scripts.min.js: { minified: true }
+  dependencies:
+    - core/jquery

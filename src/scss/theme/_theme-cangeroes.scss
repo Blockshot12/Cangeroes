@@ -1,0 +1,38 @@
+$black: #111;
+$light-black: #191919;
+$dark-grey: #333;
+$grey: #666;
+$light-grey: #ccc;
+$dark-white: #eee;
+$white: #fff;
+$white-80: rgba(255,255,255,.8);
+$light-orange: #ff7e35;
+$orange: #ec671b;
+$dark-orange: #c75818;
+
+// Button Module
+$btn-default-color:               $white;
+$btn-default-bg:                  $grey;
+$btn-default-border:              darken($btn-default-bg, 10%);
+
+$btn-white-color:                 $black;
+$btn-white-bg:                    $white;
+$btn-white-bg-hover:              $orange;
+$btn-white-border:                darken($btn-white-bg, 12%);
+
+$btn-black-color:                 $white;
+$btn-black-color-hover:           $white;
+$btn-black-bg:                    $black;
+$btn-black-bg-hover:              $orange;
+
+$btn-grey-color:                  $grey;
+$btn-grey-color-hover:            $white;
+$btn-grey-bg:                     #ddd;
+$btn-grey-bg-hover:               $orange;
+
+$btn-orange-color:                $white;
+$btn-orange-color-hover:          $orange;
+$btn-orange-bg:                   $orange;
+$btn-orange-bg-hover:             $black;
+
+$btn-link-disabled-color:         $light-grey;

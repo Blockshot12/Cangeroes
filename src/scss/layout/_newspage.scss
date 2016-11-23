@@ -1,0 +1,361 @@
+.latest-news {
+	.sticky-news {
+		background-color: $white;
+
+		.view-content {
+			padding: 0;
+		}
+
+		.news-article {
+			position: relative;
+			padding: 0;
+			margin: 0 0-$grid-xs-gutter-width $grid-xs-gutter-width;
+
+			>a {
+				>.news-photo {
+					position: relative;
+					>.news-hover {
+						position: absolute;
+						display: block;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						opacity: 0;
+						background-color: rgba(0,0,0,.7);
+						@include transition(opacity, .25s, ease);
+
+						> .news-readmore {
+							display: none;
+							width: 100%;
+							color: $white;
+							font-size: 2em;
+							text-align: center;
+							margin-top: 100px;
+
+							> .news-icon {
+								width: 60px;
+								height: 30px;
+								background-image: url("../img/cangeroes-readmore.png");
+								background-position: center center;
+								background-repeat: no-repeat;
+								background-size: 60px 30px;
+								margin: 0 auto;
+							}
+						}
+					}
+				}
+				>.news-text {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					padding: $grid-xs-gutter-width $grid-xs-gutter-width $grid-xs-gutter-width*2;
+
+					.news-title {
+						display: block;
+						color: $black;
+						font-size: 2.4em;
+						font-weight: 400;
+						background-color: $white;
+						padding: 10px 10px 20px;
+						margin-bottom: $grid-xs-gutter-width*3;
+
+						&:before {
+							background: $orange none repeat scroll 0 0;
+							bottom: 10px;
+							content: "";
+							height: 2px;
+							position: absolute;
+							width: $title-xs-underscore;
+						}
+					}
+					.news-btn {
+						display: none;
+					}
+				}
+
+				&:hover {
+					>.news-photo >.news-hover {
+						opacity: 1;
+					}
+					>.news-text >.news-btn {
+						color: $white;
+						background-color: $orange;
+
+						&:after {
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+	.news-article {
+		background-color: $white;
+		padding-bottom: $grid-xs-gutter-width*2;
+
+		>.news-photo {
+			padding: 0;
+
+			a {
+				>.news-hover {
+					position: absolute;
+					display: block;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					background-color: rgba(0,0,0,.7);
+					@include transition(opacity, .25s, ease);
+
+					> .news-readmore {
+						position: absolute;
+						width: 100%;
+						top: 50%;
+						color: $white;
+						font-size: 1.3em;
+						text-align: center;
+						margin-top: -26px;
+
+						> .news-icon {
+							width: 60px;
+							height: 30px;
+							background-image: url("../img/cangeroes-readmore.png");
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-size: 60px 30px;
+							margin: 0 auto;
+						}
+					}
+				}
+				&:hover {
+					>.news-hover {
+						opacity: 1;
+					}
+				}
+			}
+
+		}
+		>.news-text {
+			padding: 0 0 0 $grid-xs-gutter-width;
+
+			.news-title {
+				color: $black;
+				font-size: 1.4em;
+				padding: 0 0 $grid-xs-gutter-width*2;
+				margin: 0;
+
+				&:before {
+					background: $orange none repeat scroll 0 0;
+					bottom: 10px;
+					content: "";
+					height: 2px;
+					position: absolute;
+					width: $title-xs-underscore;
+				}
+
+				a {
+					color: $black;
+
+					&:hover {
+						color: $orange;
+					}
+				}
+			}
+			.news-link {
+				display: none;
+			}
+		}
+	}
+	.view-footer {
+		text-align: left;
+	}
+
+	@media (min-width:$screen-sm-min) {
+		.sticky-news {
+			.news-article {
+				margin: 0 0 $grid-sm-gutter-width;
+
+				>a {
+					>.news-text {
+						padding: $grid-sm-gutter-width;
+
+						.news-title {
+							font-size: 1.8em;
+							margin-bottom: $grid-sm-gutter-width;
+
+							&:before {
+								width: $title-sm-underscore;
+							}
+						}
+						.news-btn {
+							display: inline-block;
+						}
+					}
+
+					&:hover {
+						>.news-hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		h2 {
+			background-color: $white;
+			padding: 10px 15px 25px;
+			margin: $grid-sm-gutter-width 0 0 0;
+
+			&:before {
+				bottom: 15px !important;
+			}
+		}
+		.news-article {
+			padding-bottom: $grid-sm-gutter-width;
+
+			>.news-photo {
+
+				a {
+					>.news-hover {
+
+						> .news-readmore {
+							font-size: 1.5em;
+							margin-top: -32px;
+
+							> .news-icon {
+								width: 68px;
+								height: 34px;
+								background-size: 68px 34px;
+							}
+						}
+					}
+				}
+
+			}
+			>.news-text {
+				padding: 0 $grid-sm-gutter-width;
+
+				.news-title {
+					color: $black;
+					font-size: 1.5em;
+					padding: 0 0 20px;
+					margin: 0;
+
+					&:before {
+						background: $orange none repeat scroll 0 0;
+						bottom: 10px;
+						content: "";
+						height: 2px;
+						position: absolute;
+						width: $title-sm-underscore;
+					}
+
+					a {
+						color: $black;
+
+						&:hover {
+							color: $orange;
+						}
+					}
+				}
+				.news-link {
+					display: block;
+				}
+			}
+		}
+		.view-footer {
+			text-align: center;
+			margin-top: $grid-sm-gutter-width*2;
+		}
+	}
+
+	@media (min-width:$screen-md-min) {
+		.sticky-news {
+			.news-article {
+				margin-bottom: $grid-sm-gutter-width;
+
+				>a {
+					>.news-text {
+						padding: $grid-sm-gutter-width $grid-sm-gutter-width $grid-sm-gutter-width*3;
+
+						.news-title {
+							font-size: 2.6em;
+							margin-bottom: $grid-sm-gutter-width;
+
+							&:before {
+								width: $title-sm-underscore;
+							}
+						}
+					}
+
+					&:hover {
+						>.news-hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		h2 {
+			margin-top: $grid-sm-gutter-width*2;
+		}
+		.news-article {
+
+			>.news-photo {
+
+				a {
+					>.news-hover {
+
+						> .news-readmore {
+							font-size: 1.5em;
+							margin-top: -32px;
+
+							> .news-icon {
+								width: 68px;
+								height: 34px;
+								background-size: 68px 34px;
+							}
+						}
+					}
+				}
+
+			}
+			>.news-text {
+				padding: 0 $grid-sm-gutter-width;
+
+				.news-title {
+					color: $black;
+					font-size: 1.6em;
+					padding: 0 0 20px;
+					margin: 0;
+
+					&:before {
+						background: $orange none repeat scroll 0 0;
+						bottom: 10px;
+						content: "";
+						height: 2px;
+						position: absolute;
+						width: $title-sm-underscore;
+					}
+
+					a {
+						color: $black;
+					}
+				}
+				.news-content {
+					display: block;
+				}
+			}
+		}
+		.view-footer {
+			margin-top: $grid-sm-gutter-width*2;
+		}
+	}
+}
+
+.path-frontpage {
+  .page-title {
+    display: none;
+  }
+}

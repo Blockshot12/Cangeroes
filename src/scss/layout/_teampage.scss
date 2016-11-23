@@ -1,0 +1,36 @@
+.node--type-team {
+	.field__label {
+		position: relative;
+		font-size: 1.8em;
+		font-weight: 400;
+		line-height: 1;
+		padding: 0 0 10px;
+		margin: $grid-xs-gutter-width 0 $grid-xs-gutter-width;
+
+		&:before {
+			background: $orange none repeat scroll 0 0;
+			bottom: 0;
+			content: "";
+			height: 2px;
+			position: absolute;
+			width: $title-xs-underscore;
+		}
+	}
+}
+.view-footer {
+	h2 {
+		margin-top: $grid-xs-gutter-width*2;
+	}
+}
+@media (min-width:$screen-sm-min) {
+	.node--type-team {
+		.field__label {
+			margin: $grid-sm-gutter-width 0 $grid-sm-gutter-width;
+		}
+	}
+	.view-footer {
+		h2 {
+			margin-top: $grid-sm-gutter-width*2;
+		}
+	}
+}

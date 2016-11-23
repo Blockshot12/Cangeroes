@@ -1,0 +1,86 @@
+.bestuur {
+	background-color: $white;
+
+	.bestuurslid {
+		display: block;
+		width: 100%;
+		padding-bottom: $grid-xs-gutter-width;
+		margin-bottom: $grid-xs-gutter-width;
+		@include clearfix();
+
+		.photo {
+			float: left;
+			max-width: 220px;
+			width: 25%;
+		}
+		.text {
+			float: left;
+			padding: 0 $grid-xs-gutter-width;
+
+			.title {
+				color: $black;
+				font-size: 1.1em;
+				padding: 0;
+				margin: 0 0 5px;
+			}
+			.name {
+				color: $orange;
+				font-size: 1.8em;
+				text-transform: uppercase;
+				margin: 0 0 5px;
+			}
+			a {
+				color: $grey;
+
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+	}
+
+	@media (min-width:$screen-xs-min) {
+
+		.bestuurslid {
+			.photo {
+				width: 33%;
+			}
+		}
+		.text {
+			float: left;
+			padding: 0 $grid-xs-gutter-width;
+
+			.title {
+				font-size: 1.1em;
+				margin: 0 0 5px;
+			}
+			.name {
+				font-size: 1.8em;
+				margin: 0 0 5px;
+			}
+		}
+	}
+
+	@media (min-width:560px) {
+
+		.bestuurslid {
+			.photo {
+				width: 40%;
+			}
+		}
+	}
+
+	@media (min-width:$screen-sm-min) {
+		padding: 0 0 $grid-sm-gutter-width;
+
+		.bestuurslid {
+			padding-bottom: $grid-sm-gutter-width;
+			margin-bottom: $grid-sm-gutter-width;
+
+			.text {
+				float: left;
+				padding: 0 $grid-sm-gutter-width;
+			}
+		}
+	}
+}
